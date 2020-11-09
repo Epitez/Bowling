@@ -13,7 +13,7 @@ class Bowling {
 
 ' Gestion des Frames
 class Frame {
-
+    + score() : int
 }
 
 ' Enregistrement du dixième Lancer
@@ -31,5 +31,7 @@ Bowling -> "10" Frame
 Frame -> "1..2" Lancer
 Frame <|-- DixiemeFrame
 DixiemeFrame -> "1" Lancer
+
+Frame ->  Frame : frame suivante
 
 @enduml
