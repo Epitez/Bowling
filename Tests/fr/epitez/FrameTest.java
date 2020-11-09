@@ -7,29 +7,32 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class FrameTest {
+    private Frame frameTested;
+
+    @BeforeEach
+    void setUp() {
+        this.frameTested = new Frame();
+    }
+
     @Test
     void un_lancer() {
-        Frame frameTested = new Frame();
-        frameTested.Lancer(8);
-        assert frameTested.getLancer(0).getQuilles() == 8;
+        this.frameTested.Lancer(8);
+        assert this.frameTested.getLancer(0).getQuilles() == 8;
     }
 
     @Test
     void deux_lancers() {
-        Frame frameTested = new Frame();
-        frameTested.Lancer(3);
-        frameTested.Lancer(5);
-        assert frameTested.getLancer(1).getQuilles() == 5;
+        this.frameTested.Lancer(3);
+        this.frameTested.Lancer(5);
+        assert this.frameTested.getLancer(1).getQuilles() == 5;
     }
 
     @Test
     void trois_lancers() {
-        Frame frameTested = new Frame();
-        frameTested.Lancer(3);
-        frameTested.Lancer(5);
+        this.frameTested.Lancer(3);
+        this.frameTested.Lancer(5);
         assertThrows(
                 ArrayIndexOutOfBoundsException.class,
-                () -> { frameTested.Lancer( 1 ); } );
+                () -> { this.frameTested.Lancer( 1 ); } );
     }
-
 }
