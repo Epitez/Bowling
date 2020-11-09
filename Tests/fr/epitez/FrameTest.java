@@ -35,4 +35,20 @@ class FrameTest {
                 ArrayIndexOutOfBoundsException.class,
                 () -> { this.frameTested.Lancer( 1 ); } );
     }
+
+    @Test
+    void score_sans_lancer() {
+        assertThrows(
+                ExceptionInInitializerError.class,
+                () -> { this.frameTested.Score();}
+        );
+    }
+
+    @Test
+    void score_avec_deux_lancer_0_quille() {
+        this.frameTested.Lancer(0);
+        this.frameTested.Lancer(0);
+        assertEquals( 0, this.frameTested.Score() );
+    }
+
 }

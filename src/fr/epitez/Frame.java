@@ -18,4 +18,11 @@ public class Frame {
     Lancer getLancer(int index) {
         return this.lancers[index];
     }
+
+    public int Score() throws ExceptionInInitializerError {
+        if( numeroDeLancer == 0 ) {
+            throw new ExceptionInInitializerError();
+        }
+        return 0;
+    }
 }
