@@ -1,7 +1,37 @@
-@startuml
-class Article {
-    - title
-    + getTitle()
+@startuml Bowling
+
+' configuration de plantuml
+skinparam handwritten true
+
+title Conception du Bowling
+
+' Gestion du score du Bowling
+class Bowling {
+    + Lancer(quilles : int)
+    + Score() : int
 }
-User "1" -- "*" Article
+
+' Gestion des Frames
+class Frame {
+    + score() : int
+}
+
+' Enregistrement du dixième Lancer
+class DixiemeFrame {
+}
+
+' Enregistrement des Lancers
+class Lancer {
+    - quilles : int
+}
+
+
+' Une parti se déroule en 10 Frames
+Bowling -> "10" Frame
+Frame -> "1..2" Lancer
+Frame <|-- DixiemeFrame
+DixiemeFrame -> "1" Lancer
+
+Frame ->  Frame : frame suivante
+
 @enduml
