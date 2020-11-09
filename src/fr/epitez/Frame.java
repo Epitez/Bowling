@@ -20,9 +20,16 @@ public class Frame {
     }
 
     public int Score() throws ExceptionInInitializerError {
-        if( numeroDeLancer == 0 ) {
-            throw new ExceptionInInitializerError();
+        int score = 0;
+        switch ( this.numeroDeLancer ) {
+            case 2:
+                score = this.lancers[1].getQuilles();
+            case 1:
+                score += this.lancers[0].getQuilles();
+                break;
+            default:
+                throw new ExceptionInInitializerError();
         }
-        return 0;
+        return score;
     }
 }

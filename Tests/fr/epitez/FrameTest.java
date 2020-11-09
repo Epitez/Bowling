@@ -51,4 +51,11 @@ class FrameTest {
         assertEquals( 0, this.frameTested.Score() );
     }
 
+    @Test
+    void score_avec_deux_lancer_avec_1_quille() {
+        this.frameTested.Lancer(1);
+        this.frameTested.Lancer(1);
+        assertEquals( 2, this.frameTested.Score() );
+    }
+
 }
