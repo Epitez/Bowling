@@ -16,7 +16,20 @@ class Frame {
 
 }
 
+' Enregistrement du dixième Lancer
+class DixiemeFrame {
+}
+
+' Enregistrement des Lancers
+class Lancer {
+    - quilles : int
+}
+
+
 ' Une parti se déroule en 10 Frames
 Bowling -> "10" Frame
+Frame -> "1..2" Lancer
+Frame <|-- DixiemeFrame
+DixiemeFrame -> "1" Lancer
 
 @enduml
