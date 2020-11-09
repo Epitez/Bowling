@@ -1,7 +1,6 @@
 @startuml
-class Article {
-    - title
-    + getTitle()
+class Bowling {
+    + Lancer(quilles : int)
+    + Score() : int
 }
-User "1" -- "*" Article
 @enduml
