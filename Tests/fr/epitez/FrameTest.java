@@ -22,4 +22,14 @@ class FrameTest {
         assert frameTested.getLancer(1).getQuilles() == 5;
     }
 
+    @Test
+    void trois_lancers() {
+        Frame frameTested = new Frame();
+        frameTested.Lancer(3);
+        frameTested.Lancer(5);
+        assertThrows(
+                ArrayIndexOutOfBoundsException.class,
+                () -> { frameTested.Lancer( 1 ); } );
+    }
+
 }
