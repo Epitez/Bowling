@@ -12,7 +12,7 @@ class Bowling {
 }
 
 ' Gestion des Frames
-class Frame {
+class fr.epitez.Frame {
     + score() : int
 }
 
@@ -27,11 +27,11 @@ class Lancer {
 
 
 ' Une parti se déroule en 10 Frames
-Bowling -> "10" Frame
-Frame -> "1..2" Lancer
-Frame <|-- DixiemeFrame
+Bowling -> "10" fr.epitez.Frame
+fr.epitez.Frame -> "1..2" Lancer
+fr.epitez.Frame <|-- DixiemeFrame
 DixiemeFrame -> "1" Lancer
 
-Frame ->  Frame : frame suivante
+fr.epitez.Frame ->  fr.epitez.Frame : frame suivante
 
 @enduml
