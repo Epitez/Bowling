@@ -1,6 +1,22 @@
-@startuml
+@startuml Bowling
+
+' configuration de plantuml
+skinparam handwritten true
+
+title Conception du Bowling
+
+' Gestion du score du Bowling
 class Bowling {
     + Lancer(quilles : int)
     + Score() : int
 }
+
+' Gestion des Frames
+class Frame {
+
+}
+
+' Une parti se déroule en 10 Frames
+Bowling -> "10" Frame
+
 @enduml
