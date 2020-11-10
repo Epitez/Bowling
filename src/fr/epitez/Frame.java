@@ -15,11 +15,6 @@ public class Frame {
         this.lancers[numeroDeLancer++] = new Lancer(quille);
     }
 
-    // Methodes privées au pakage pour les tests
-    Lancer getLancer(int index) {
-        return this.lancers[index];
-    }
-
     public int Score() throws ExceptionInInitializerError {
         int score = 0;
         switch ( this.numeroDeLancer ) {
@@ -32,6 +27,9 @@ public class Frame {
                 throw new ExceptionInInitializerError();
         }
         if(score == 10) {
+            if(this.numeroDeLancer == 1) {
+                score += this.frameSuivante.lancers[1].getQuilles();
+            }
             score += this.frameSuivante.lancers[0].getQuilles();
         }
         return score;
@@ -40,4 +38,10 @@ public class Frame {
     public void FrameSuivante(Frame frameSuivante) {
         this.frameSuivante = frameSuivante;
     }
+
+    // Methodes privées au pakage pour les tests
+    Lancer getLancer(int index) {
+        return this.lancers[index];
+    }
+
 }

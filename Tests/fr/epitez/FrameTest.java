@@ -66,7 +66,17 @@ class FrameTest {
         frameSuivante.Lancer(3);
         frameSuivante.Lancer(4);
         this.frameTested.FrameSuivante(frameSuivante);
-        assertEquals( 13, this.frameTested.Score() );
+        assertEquals( 10+3, this.frameTested.Score() );
+    }
+
+    @Test
+    void score_avec_un_strike() {
+        this.frameTested.Lancer(10);
+        Frame frameSuivante = new Frame();
+        frameSuivante.Lancer(7);
+        frameSuivante.Lancer(2);
+        this.frameTested.FrameSuivante(frameSuivante);
+        assertEquals( 10+7+2, this.frameTested.Score() );
     }
 
 }
