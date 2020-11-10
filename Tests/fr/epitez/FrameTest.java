@@ -58,4 +58,15 @@ class FrameTest {
         assertEquals( 2, this.frameTested.Score() );
     }
 
+    @Test
+    void score_avec_un_spare() {
+        this.frameTested.Lancer(2);
+        this.frameTested.Lancer(8);
+        Frame frameSuivante = new Frame();
+        frameSuivante.Lancer(3);
+        frameSuivante.Lancer(4);
+        this.frameTested.FrameSuivante(frameSuivante);
+        assertEquals( 13, this.frameTested.Score() );
+    }
+
 }

@@ -4,6 +4,7 @@ public class Frame {
 
     protected Lancer[] lancers;
     private int numeroDeLancer;
+    private Frame frameSuivante;
 
     public Frame() {
         this.lancers = new Lancer[2];
@@ -30,6 +31,13 @@ public class Frame {
             default:
                 throw new ExceptionInInitializerError();
         }
+        if(score == 10) {
+            score += this.frameSuivante.lancers[0].getQuilles();
+        }
         return score;
+    }
+
+    public void FrameSuivante(Frame frameSuivante) {
+        this.frameSuivante = frameSuivante;
     }
 }
